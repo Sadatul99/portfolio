@@ -9,7 +9,7 @@ import 'aos/dist/aos.css';
 import AboutMe from "./sections/AboutMe/AboutMe";
 import Skills from "./sections/AboutMe/Skills";
 import { Environment, OrbitControls, ScrollControls } from "@react-three/drei";
-import MacContainer from "./sections/AboutMe/macContainer";
+import MacContainer from "./sections/AboutMe/MacContainer";
 import { Canvas } from "@react-three/fiber";
 
 import { Suspense } from 'react';
