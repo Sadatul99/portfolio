@@ -7,7 +7,7 @@ import Hero from "./components/Hero/Hero";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AboutMe from "./sections/AboutMe/AboutMe";
-import Skills from "./sections/AboutMe/skills";
+import Skills from "./sections/AboutMe/Skills";
 import { Environment, OrbitControls, ScrollControls } from "@react-three/drei";
 import MacContainer from "./sections/AboutMe/macContainer";
 import { Canvas } from "@react-three/fiber";

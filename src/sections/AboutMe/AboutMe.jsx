@@ -1,15 +1,10 @@
-import { Canvas } from "@react-three/fiber";
-import "./style.css"
-import { OrbitControls } from "@react-three/drei";
-import MacContainer from "./macContainer";
 
-const AboutMe = () => {
+
+
+const About = () => {
     return (
-        <Canvas camera={{fov:20, position:[0,-10, 120]}}>
-            <OrbitControls></OrbitControls>
-            <MacContainer className='w-full h-full'></MacContainer>
-        </Canvas>
+        <div></div>
     );
 };
 
-export default AboutMe;
+export default About;
