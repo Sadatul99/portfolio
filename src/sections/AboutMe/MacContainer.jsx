@@ -5,8 +5,8 @@ import * as THREE from "three"
 
 
 const MacContainer = () => {
-    let model = useGLTF("../../../public/mac.glb")
-    let tex = useTexture("../../../public/des.png");
+    let model = useGLTF("/mac.glb")
+    let tex = useTexture("/des.png");
     let meshes = {}
     model.scene.traverse(e =>{
         meshes[e.name] = e
