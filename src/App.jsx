@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import gsap from "gsap";
 import CustomEase from "gsap/CustomEase";
-import Header from "./components/Header";
 import "./App.css";
-import Hero from "./components/Hero/Hero";
-import AOS from 'aos';
+import Hero from "./sections/Hero/Hero";
+
 import 'aos/dist/aos.css';
-import AboutMe from "./sections/AboutMe/AboutMe";
-import Skills from "./sections/AboutMe/Skills";
+
 import { Environment, OrbitControls, ScrollControls } from "@react-three/drei";
 import MacContainer from "./sections/AboutMe/MacContainer";
 import { Canvas } from "@react-three/fiber";
 
-import { Suspense } from 'react';
+import Navbar from "./sections/Navbar/Navbar";
+import Services from "./sections/Services/Services";
+import About from "./sections/AboutMe/About";
 
 
 
@@ -37,18 +37,6 @@ const App = () => {
     });
     gsap.set(".word h1", { y: "120%", opacity: 0 });
 
-    // Shutter entrance
-    // tl.fromTo(
-    //   ".block",
-    //   { y: "100%" },
-    //   {
-    //     y: "0%",
-    //     duration: 1,
-    //     ease: "power3.out",
-    //     stagger: 0.1,
-    //   },
-    //   0
-    // );
 
     // Faster counter animation
     counts.forEach((count, index) => {
@@ -192,35 +180,23 @@ const App = () => {
 
       {!loading &&
         <div className="">
-
-          {/* Background Gradient & Shadow */}
-          <img
-            className="absolute top-0 right-0 opacity-60 -z-10"
-            src="/gradient.png"
-            alt="Gradient-img"
-          />
-          <div className="h-4 w-[40rem] absolute top-[20%] right-[-5%] shadow-[0_0_900px_20px_#e99b63] -rotate-[10deg] blur-3xl -z-10"></div>
-
-
-          {/* Header (only shows after loading) */}
-          <Header />
+          <Navbar></Navbar>
           <Hero></Hero>
+          <Services></Services>
+          <About></About>
 
           {/* Macbook animation */}
-
-        
-            <Skills />
-
           <section className="relative w-full h-screen overflow-hidden bg-black">
             <h1 className="text-white text-4xl font-semibold text-center items-center justify-center my-4">Scroll on the <span className="text-transparent bg-gradient-to-r from-[#e99b63] via-white to-[#e99b63] bg-clip-text bg-[length:200%_200%] animate-gradient-loop font-semibold ">
-  Laptop
-</span>
- </h1>
+              Laptop
+            </span>
+            </h1>
             <Canvas
-              camera={{ fov: 12,
-                 position: [0, 5, 200],
-                 aspect: window.innerWidth / window.innerHeight // Responsive aspect ratio
-                 }}
+              camera={{
+                fov: 12,
+                position: [0, 5, 200],
+                aspect: window.innerWidth / window.innerHeight // Responsive aspect ratio
+              }}
               className="!absolute !top-0 !left-0 !w-full !h-full"
             >
               <Environment
